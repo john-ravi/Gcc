@@ -68,9 +68,22 @@ class _MyHomePageState extends State<MyHomePage> {
       // This trailing comma makes auto-formatting nicer for build methods.
       body: new Builder(builder: (BuildContext context) {
         return SafeArea(
-          child: new Stack(children: <Widget>[
-            Image.asset(name)
-          ],),
+          child: new Stack(
+            children: <Widget>[
+              Image.asset("Background Image",
+                  width: double.infinity, height: double.infinity),
+              Container(
+                margin: EdgeInsets.only(top: 16.0),
+                child: Center(
+                  child: Image.asset(
+                    "Car on Top",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+              
+            ],
+          ),
         );
       }),
     );
