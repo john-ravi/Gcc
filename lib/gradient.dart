@@ -1,8 +1,5 @@
 import 'package:flutter/material.dart';
 
-import './models/app_colors.dart';
-import './screens/login.dart';
-
 void main() => runApp(new MyApp());
 
 class MyApp extends StatelessWidget {
@@ -10,9 +7,8 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return new MaterialApp(
-      title: 'GCC ADMIN',
+      title: 'Flutter Demo',
       theme: new ThemeData(
-        primaryColor: PrimaryColor,
         // This is the theme of your application.
         //
         // Try running your application with "flutter run". You'll see the
@@ -48,7 +44,6 @@ class MyHomePage extends StatefulWidget {
 
 class _MyHomePageState extends State<MyHomePage> {
   int _counter = 0;
-  bool admin_logged = false;
 
   void _incrementCounter() {
     setState(() {
@@ -71,14 +66,30 @@ class _MyHomePageState extends State<MyHomePage> {
     // than having to individually change instances of widgets.
     return new Scaffold(
       // This trailing comma makes auto-formatting nicer for build methods.
-
-      appBar: AppBar(
-        backgroundColor: PrimaryColor,
-        centerTitle: true,
-        title: Text("Admin Login", textAlign: TextAlign.center),
-      ),
       body: new Builder(builder: (BuildContext context) {
-        return admin_logged ? Text("Admin Dashboard to come here") : Login();
+        return SafeArea(
+          child: new Stack(
+            children: <Widget>[
+              Container(
+                decoration: BoxDecoration(
+                    gradient: LinearGradient(
+                      colors: null,
+                      begin: Alignment.bottomRight, // new
+                      end: Alignment.topLeft,
+                    )),
+              ),
+              Container(
+                margin: EdgeInsets.only(top: 16.0),
+                child: Center(
+                  child: Image.asset(
+                    "Car on Top",
+                    fit: BoxFit.contain,
+                  ),
+                ),
+              ),
+            ],
+          ),
+        );
       }),
     );
   }

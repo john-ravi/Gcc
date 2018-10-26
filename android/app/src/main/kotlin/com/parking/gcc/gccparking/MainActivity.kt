@@ -1,4 +1,4 @@
-package in.parking.gcc.gccparking
+package com.parking.gcc.gccparking
 
 import android.os.Bundle
 
